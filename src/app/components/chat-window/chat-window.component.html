@@ -1,0 +1,30 @@
+<div class="row p-4" *ngFor="let item of messages; let i = index">
+  <div class="col-md-8 col-8" *ngIf="sendername !== item.username">
+    <div class="alert alert-primary py-1 px-3">
+      <h6>{{ item.message }}</h6>
+      <em>{{ getDate(item.date) }}</em>
+    </div>
+  </div>
+  <div class="col-md-4 col-4" *ngIf="sendername !== item.username"></div>
+  <div class="col-md-4 col-4" *ngIf="sendername === item.username"></div>
+  <div class="col-md-8 col-8" *ngIf="sendername === item.username">
+    <div class="alert alert-primary py-1 px-3">
+      <h6>{{ item.message }}</h6>
+      <em>{{ getDate(item.date) }}</em>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="input-group">
+      <input class="form-control" aria-label="Send" [(ngModel)]="inputValue" />
+      <button
+        class="input-group-text btn btn-secondary"
+        (click)="sendMessage()"
+      >
+        Send
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 p-4 text-center users-panel">
+      <h5>Contacts</h5>
+      <ng-container *ngFor="let item of users">
+        <h5>
+          <a
+            [routerLink]="[{ outlets: { chatWindow: ['chat'] } }]"
+            (click)="openUserChat(item)"
+            >{{ item.firstname }}</a
+          >
+        </h5>
+      </ng-container>
+    </div>
+    <div class="col-md-8 chat-panel">
+      <router-outlet name="chatWindow"></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://chat94-backend.herokuapp.com",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
